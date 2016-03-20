@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <title>Sample page</title>
+        <meta charset="utf-8" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="sample.css">
+    </head>
+    <body>
+        <div id="wrapper">
+             <div id="header">
+                <h1>Jason McKinley Williams</h1>
+                <hr />
+                <p id="salutation"></p>
+                <ul>
+                    <li>Home</li>
+                    <li>Writing</li>
+                    <li>Software</li>
+                </ul>
+                <hr />
+            </div><!-- end of header -->
+            <div class="highlight">
+                <h3>Latest News</h3>
+                <p>This is the section with the latest news</p>
+            </div><!-- end of new section -->
+            <div class="article">
+                <h3>Just another article</h3>
+                <p>This is some fascinating information that I wanted to share. I think it will be awesome and everyone will enjoy it."</p>
+                <p>There could be some more information in another paragraph"</p>
+                <ul>
+                    <li>There could also be bulleted text here</li>
+                    <li>That would be fun</li>
+                </ul>
+            </div><!--end of article -->
+        </div><!--end of body wrapper -->
+      
+        <!-- script to replace salutation (with literal for now) -->
+        <script>
+            var myName = 'Jason';
+            document.getElementById("salutation").innerHTML = 'Hello, ' + myName;
+        </script>
+
+    </body>
+</html>
+
+
