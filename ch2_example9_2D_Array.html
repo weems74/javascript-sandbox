@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter 2, Exercise 9ish</title>
+        <style>
+            table,th,td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 10px;
+            }
+            tr:first-child {
+                background-color: gray;
+               }
+        </style>
+    </head>
+    <body>
+        <script>
+            // Declare a one-dimensional array
+            var bookEntry = [];
+            
+            // Create a (fake) two dimesional array by declaring the array entry to be an array as well
+            bookEntry[0] = [];
+
+            // Assign values
+            bookEntry [0][0] = 'The Sound and the Fury';
+            bookEntry [0][1] = 'William Faulkner';
+            
+            bookEntry [1] = [];
+            bookEntry [1][0] = 'The Sun Also Rises';
+            bookEntry [1][1] = 'Ernest Hemingway';
+
+            bookEntry[2] = [];
+            bookEntry[2][0] = 'Song of Soloman';
+            bookEntry[2][1] = 'Toni Morrison';
+
+            //output values - later - retry this with a loop
+            document.write('<table>')
+            document.write('<tr>')
+            document.write('<td>' + 'Title' + '</td>');
+            document.write('<td>' + 'Author' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + bookEntry[0][0] + '</td>');
+            document.write('<td>' + bookEntry[0][1] + '</td>');
+            document.write('</tr>')
+            document.write('<tr>');
+            document.write('<td>' + bookEntry[1][0] + '</td>');
+            document.write('<td>' + bookEntry[1][1] + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + bookEntry[2][0] + '</td>');
+            document.write('<td>' + bookEntry[2][1] + '</td>');
+            document.write('</tr>');
+            document.write('</table>');
+
+        </script>
+    </body>
+</html>
+
