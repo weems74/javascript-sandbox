@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter 4, Exercise 1 & 2</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+        // Prompt for times table, prompt for start, prompt for end
+        // function that just multiplies numbers and returns the result
+        // loop from start to end (inclusive), call the function, and write the result.
+
+        function multiplyNumbers(num1, num2){
+            return num1 * num2;
+        }
+    
+        
+        var timesTableNumber;
+
+        while ((timesTableNumber = prompt('Enter the times table',-1)) != -1){
+            while (isNaN(timesTableNumber)){
+                    prompt(timesTableNumber + ' is not a valid number. Please retry',-1);
+                    }
+
+                    if (timesTableNumber == -1){
+                        break;
+                        }
+                    
+            
+            var startNumber = parseInt(prompt('What is the starting number?',''));
+            var endNumber = parseInt(prompt('What is the ending number?',''));
+
+            for (var loopCounter = startNumber; loopCounter<=endNumber; loopCounter++ ){
+                document.write(timesTableNumber + ' * ' + loopCounter + ' = ' + multiplyNumbers(timesTableNumber,loopCounter) + '<br/>');
+            }
+        }
+
+
+        </script>
+    </body>
+</html>

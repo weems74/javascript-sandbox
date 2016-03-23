@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html>
+        <head>
+            <title>Chapter 4, Example 2 - Passing functions</title>
+        </head>
+        <body>
+            <script type="text/javascript">
+
+                // simple function to convert to C
+                function toCentigrade(degFahren){
+                    var degCent = 5/9 * (degFahren - 32);
+                    document.write(degFahren + ' Fahrenheit  is ' + degCent + ' Celcius.<br.>');
+                }
+
+                // simple function to convert to F 
+                function toFahrenheit(degCent){
+                    var degFahren = 9/5 * degCent + 32;
+                    document.write(degCent + ' Celcius is ' + degFahren + ' Fahrenheit.<br/>');
+                }
+
+                // By doing this approach, you can easily use another function within your function.
+                function convert (converter, temperature){
+                    converter(temperature);
+                }
+
+                convert (toFahrenheit, 23);
+                convert (toCentigrade, 75);
+            </script>
+        </body>
+    </html>
+</html>
