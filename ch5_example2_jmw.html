@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter 5, Exercise 2 - Checking Case</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function checkCharType(charToCheck){
+                var returnValue = 'O';
+                var charCode = charToCheck.charCodeAt(0);
+
+                if (charCode >='A'.charCodeAt(0) && charCode <='Z'.charCodeAt(0)){
+                    returnValue = "U";
+                }else if (charCode >= 'a'.charCodeAt(0) && charCode <='z'.charCodeAt(0)){
+                    returnValue = 'L';
+                }else if (charCode >='0'.charCodeAt(0) && charCode <='9'.charCodeAt(0)){
+                    returnValue = 'N';
+                }else if (charCode == 32){
+                    return ' ';
+                }
+
+                return returnValue;
+            }
+
+            var myString = prompt('Enter some text','Hello World!');
+
+            console.log('length of mystring:' + myString.length);
+
+            var currentChar = 'a';
+
+            for (var position=0; position < myString.length-1; position++){
+
+                console.log(myString.charCodeAt(position));
+                currentChar = myString.charCodeAt(position);
+                console.log('current char= ' + currentChar);
+                var currentCharCase = checkCharType(currentChar);
+
+                //document.write(currentCharCase);
+            }
+
+
+
+
+
+        </script>
+    </body>
+</html>
