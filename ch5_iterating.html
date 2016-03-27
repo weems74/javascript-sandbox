@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Investigating Iterators</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var numbers = [ 1, 2, 3, 4, 5];
+
+            /*
+               .every is an iteration method - you can call it on a method and specify a function you want it to run on every element
+
+               In that function, you need the parameters, value, index, and array
+
+               value = individual value of the array item being examined/iterated upon
+               index = index position of the item being examined/iterated on
+               array = name of the array being iterated upon
+               */
+            function isLessThanThree(value, index, array){
+
+                var returnValue = false;
+
+                if (value < 3){
+                    returnValue = true;
+                }
+                return returnValue;
+            }
+        
+        // call the every method on the array, and be sure to process the three parameters in your method
+        alert(numbers.every(isLessThanThree));
+        
+        </script>
+    </body>
+</html>

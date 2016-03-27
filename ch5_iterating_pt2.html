@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Practicing with some() method</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var numbers = [1, 2, 3, 4, 5];
+
+            function isLessThanThree(value, index, array){
+                var returnValue = false;
+
+                if (value < 3){
+                    returnValue = true;
+                }
+
+                return returnValue;
+            }
+
+            // the .some method is called on an array and passed a function (with the requisite parameters)
+            // if some of those iterations return true, create a 'result' arrat that has the matching items.  
+            // the .filter() method creates a new array out of the returned value of the successfully run functions.
+            if (numbers.some(isLessThanThree)){
+                    var result = numbers.filter(isLessThanThree);
+                    alert('These numbers are less than 3:'+  result);
+                    }
+
+        </script>
+    </body>
+</html>
