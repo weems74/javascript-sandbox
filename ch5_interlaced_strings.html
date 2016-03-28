@@ -28,15 +28,17 @@
                 console.log('firstArray=' + firstArray);
                 console.log('secondtArray=' + secondArray);
 
-                var longArray = firstArray;;
+                var shortArray = firstArray;
+                var longArray = secondArray;
 
                 // if the first array is longer, then it is the default. If they are equal, it doesn't matter.
-                if (secondArray.length > firstArray.length){
-                    longArray = secondArray;
+                if (secondArray.length < firstArray.length){
+                    shorArray = secondArray;
+                    longArray = firstArray;
                 }
 
 
-                for (var indexPosition; indexPosition<longArray.length; indexPosition++){ 
+                for (var indexPosition; indexPosition<shortArray.length; indexPosition++){ 
                 
                     console.log('firstArray[' + indexPosition + ']=' + firstArray[indexPosition]);
                     if (firstArray[indexPosition] != 'undefined'){
@@ -46,7 +48,11 @@
                     console.log('secondArray[' + indexPosition + ']=' + secondArray[indexPosition]);
                    
                 }
+                
+                var remainder = longArray.slice(indexPosition);
+                
 
+                return interlaced.join(remainder);
                 
             }//end interlaceArrays
             var array1 = 'Bob';
@@ -54,10 +60,10 @@
             
             var finalString = interlaceArrays(array1, array2);
 
-          //  document.write('Interlaced Array: ' + finalString.join(' '));
+            document.write(finalString);
 
 
-        
+
         </script>
     </body>
 </html>
