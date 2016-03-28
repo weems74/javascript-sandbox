@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Interlace two Strings</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+               Take two strings as input
+               output them to the page with the characters interlaced
+               iterate through the first string
+               loop through first array (while current element != -1
+               put first element into 0 position
+               if 0 position element in 2nd array != -1, put 1 position element in 2nd array into +1 position
+
+
+             */
+
+
+
+            function interlaceArrays(firstArray, secondArray){
+
+                console.log('in the interlaceArray Function');
+
+                var indexPosition = 0;
+                var interlaced = [];
+
+                console.log('firstArray=' + firstArray);
+                console.log('secondtArray=' + secondArray);
+
+                var longArray = firstArray;;
+
+                // if the first array is longer, then it is the default. If they are equal, it doesn't matter.
+                if (secondArray.length > firstArray.length){
+                    longArray = secondArray;
+                }
+
+
+                for (var indexPosition; indexPosition<longArray.length; indexPosition++){ 
+                
+                    console.log('firstArray[' + indexPosition + ']=' + firstArray[indexPosition]);
+                    if (firstArray[indexPosition] != 'undefined'){
+                        interlaced[indexPosition] = firstArray[indexPosition];
+                    }else{
+                        continue;}
+                    console.log('secondArray[' + indexPosition + ']=' + secondArray[indexPosition]);
+                   
+                }
+
+                
+            }//end interlaceArrays
+            var array1 = 'Bob';
+            var array2 = 'Steve';
+            
+            var finalString = interlaceArrays(array1, array2);
+
+          //  document.write('Interlaced Array: ' + finalString.join(' '));
+
+
+        
+        </script>
+    </body>
+</html>
