@@ -8,26 +8,15 @@
             /*
                Take two strings as input
                output them to the page with the characters interlaced
-               iterate through the first string
-               loop through first array (while current element != -1
-               put first element into 0 position
-               if 0 position element in 2nd array != -1, put 1 position element in 2nd array into +1 position
-
-
              */
-
 
 
             function interlaceArrays(firstArray, secondArray){
 
-                console.log('in the interlaceArray Function');
-
-                var indexPosition = 0;
-                var interlaced = [];
-
-                console.log('firstArray=' + firstArray);
-                console.log('secondtArray=' + secondArray);
-
+                var indexPosition = 0;      // index for the individual strings
+                var interlaced = [];        // interlaced string
+                var interlaceIndex = 0;     // separate index to track the interlaced string
+                
                 var shortArray = firstArray;
                 var longArray = secondArray;
 
@@ -37,28 +26,28 @@
                     longArray = firstArray;
                 }
 
-
+                // remove the part that is longer -- just add to the end later
+                var remainder = longArray.slice(shortArray.length);
+    
+                // loop to actually interlace the strings
                 for (var indexPosition; indexPosition<shortArray.length; indexPosition++){ 
                 
-                    console.log('firstArray[' + indexPosition + ']=' + firstArray[indexPosition]);
-                    if (firstArray[indexPosition] != 'undefined'){
-                        interlaced[indexPosition] = firstArray[indexPosition];
-                    }else{
-                        continue;}
-                    console.log('secondArray[' + indexPosition + ']=' + secondArray[indexPosition]);
-                   
+                    interlaced[interlaceIndex] = firstArray[indexPosition];
+                    interlaced[interlaceIndex + 1] = secondArray[indexPosition]
+                    interlaceIndex+=2;      // move index of interlaced string by 2 so you don't overwrite 
                 }
-                
-                var remainder = longArray.slice(indexPosition);
-                
 
-                return interlaced.join(remainder);
+                return interlaced.concat(remainder);
                 
             }//end interlaceArrays
-            var array1 = 'Bob';
-            var array2 = 'Steve';
-            
-            var finalString = interlaceArrays(array1, array2);
+
+            var array1 = prompt('Enter a string:','');
+            var array2 = prompt('Enter a string:','');
+
+
+            // join result to convert array into a string
+            var finalString = interlaceArrays(array1, array2).join('');
+
 
             document.write(finalString);
 
