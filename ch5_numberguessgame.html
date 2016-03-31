@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Number Guessing Game</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // establish the correct answer (between 1 and 10
+            var correctAnswer = (Math.floor(Math.random() * 10) + 1);
+
+            var userGuess = -1;
+
+            while (userGuess != correctAnswer){
+                userGuess = prompt('Guess a number between 1 and 10','');
+
+                if (userGuess < correctAnswer){
+                    alert('Too Low!');
+                } else if ( userGuess > correctAnswer){
+                    alert('Too High!');
+                }else{
+                    alert('Correct!!');
+                }
+
+            }
+
+        </script>
+    </body>
+</html>
