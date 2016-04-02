@@ -9,39 +9,21 @@
 
             birthDate = prompt('Enter your birthday (MM/DD/YYYY)','');
 
-            //Using multiple functions to test Jasmine later
+            document.write('You are ' + getYearDifference(birthDate) + ' years old.');
 
-            // Use one function to get the total # of seconds
-            var totalMilliseconds = getRawAge(birthDate);
-            
-            // Use another function to get the # of years
-            document.write('You are ' + convertToYears(totalMilliseconds) + ' years old.');
-
-            function getRawAge(birthDate){
-                // Not sure if it's the best way, but using 1970 method two ways:
-                // for dates before and after January 1, 1970
+            //doesn't account for day of the year, but okay for now
+            function getYearDifference(birthDate){
+                var birthday = new Date(birthDate);
                 var currentDate = new Date();
-                var beforeSeventyTime = 0;
-                var afterSeventyTime = 0;
-
-                if (birthDate.getFullYear < 1970){
-                    beforeSeventyTime = birthDate.getTime();
+                var fullYearsOld = currentDate.getFullYear() - birthday.getFullYear();
+                if (currentDate.getFullYear() > birthday.getFullYear() + fullYearsOld){
+                    fullYearsOld--;
                 }
+
+                return fullYearsOld;
+            }
             
-                afterSeventyTime = currentDate.getTime();
 
-                var totalMillisecondsAlive = beforeSeventyTime + afterSeventyTime;
-                return totalMillisecondsAlive;
-            }
-
-            function convertToYears(totalMilliseconds){
-                var secondsAlive = totalMilliseconds/1000;
-                var hoursAlive = secondsAlive/3600;
-                var daysAlive = hoursAlive/24;
-                var yearsAlive = daysAlive/365;     //ignore leap years for now
-
-                return yearsAlive;
-            }
         </script>
     </body>
 </html>    
