@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter 5, Example 6 - Date objects</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           // clever - create array of months and call .getMonth() to get the index of the array. Use this in other places
+            var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+            
+            var dateNow = new Date();
+            var yearNow = dateNow.getFullYear();
+            var monthNow = months[dateNow.getMonth()];
+            var dayNow = dateNow.getDate();
+            var daySuffix;
+
+            switch (dateNow){
+                case 1:
+                case 21:
+                case 31:
+                    daySuffix='st';
+                    break;
+                case 3:
+                case 23:
+                    daySuffix='rd';
+                    break;
+                case 2:
+                case 22:
+                    daySuffix='nd';
+                    break;
+                default:
+                    daySuffix='th';
+                    break;
+            }
+
+            document.write('It is the ' + dayNow + daySuffix + ' day ');
+            document.write('in the month of ' + monthNow);
+            document.write(' in the year ' + yearNow);
+        </script>
+    </body>
+</html>
