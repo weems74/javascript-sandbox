@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter5, Exercise2</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+               Obtain a list of names from the user, storing
+               each in an array. Keep going until the user enters nothing.
+               Sort the names in aschending order and output them to the page
+               One name per line
+               */
+
+        var nameList = [];
+        var currentName = null;
+
+       while ((currentName = prompt('Enter a name, or enter a blank to see the sorted list of name',''))  != ''){
+            nameList.push(currentName);     
+       }
+
+        nameList.sort();
+
+        for (var i=0; i<nameList.length; i++){
+            document.write('Name ' + i + ': ' + nameList[i] + '</br>');
+        }
+       
+        </script>
+    </body>
+</html>
